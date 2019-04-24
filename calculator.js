@@ -64,18 +64,18 @@ function reset(){
   num1=0;
   num2=0;
   operation=''; 
-  let display = document.querySelector('#display');
+  let display = document.querySelector('.display');
   display.innerHTML = "";
 }
 
 //Working with Numbers//
-let btns = document.querySelectorAll('#num');
+let btns = document.querySelectorAll('.num');
 btns.forEach((btn=> {
     btn.addEventListener('click', (e) => {
         input.push(e.target.innerHTML);
         inputNum=Number(input.join(''));
 
-        let display = document.querySelector('#display');
+        let display = document.querySelector('.display');
         display.innerHTML = "";
         display.innerHTML = inputNum;
         if (token===0){num1=inputNum;} else {num2=inputNum;};
@@ -84,7 +84,7 @@ btns.forEach((btn=> {
 }));
 
 //Working with Functions 
-let ops = document.querySelectorAll('#op');
+let ops = document.querySelectorAll('.op');
 ops.forEach((op=> {
     op.addEventListener('click', (e) => {
         operator=e.target.innerHTML;
@@ -95,16 +95,16 @@ ops.forEach((op=> {
 }));
 
 //Execute Functions 
-let ex = document.querySelector('#equal');
+let ex = document.querySelector('.equal');
     ex.addEventListener('click', () => {
-        let display = document.querySelector('#display');
+        let display = document.querySelector('.display');
         display.innerHTML = "";
         display.innerHTML = operate(operator, num1, num2);
         num1=display.innerHTML;
     });
 
 //Clear all
-let clear = document.querySelector('#clear');
+let clear = document.querySelector('.clear');
     clear.addEventListener('click', ()=> {
        reset();
     });
